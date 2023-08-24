@@ -3,8 +3,8 @@ import { pool } from "../database";
 
 const router = Router();
 
-router.post("/", async (req: Request, res: Response) => {
-    const { clientId } = req.body;
+router.post("/:clientId", async (req: Request, res: Response) => {
+    const clientId = req.params.clientId;
 
     // Check if client ID is valid
     const clientResult = await pool.query(

@@ -1,4 +1,4 @@
-import express from "express";
+import express, {Express} from "express";
 import bodyParser from "body-parser";
 import { connectToDatabase } from "./database";
 import helloEndpoint from "./endpoints/hello";
@@ -7,7 +7,7 @@ import generateApiKeyEndpoint from "./endpoints/generateApiKey";
 import { protectApiEndpoint } from "./middleware/protectApiEndpoint";
 require("dotenv").config();
 
-const app = express();
+const app: Express = express();
 const managementServer = express();
 
 const PORT = process.env.PORT || 8080;
